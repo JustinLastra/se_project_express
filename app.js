@@ -17,6 +17,7 @@ mongoose
     console.error("Error connecting to DB", err);
   });
 
+  app.use(express.json());
   app.use("/", mainRouter);
 
 app.listen(port, () => {

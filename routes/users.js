@@ -1,6 +1,10 @@
-const router = require("express").Router();
+const { get } = require("mongoose");
 
-router.get("/", () => console.log("GET users"));
+const router = require("express").Router();
+const { getUsers, createUser } = require("../controllers/users");
+
+router.get("/", getUsers);
 router.get("/:userId", () => console.log("GET user by ID"));
-router.post("/", () => console.log("POST users"));
+router.post("/", createUser);
+
 module.exports = router;
