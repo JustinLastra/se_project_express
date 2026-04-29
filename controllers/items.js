@@ -27,9 +27,7 @@ const createItem = (req, res) => {
       console.error(err);
       console.log(err.name);
       if (err.name === "ValidationError") {
-        return res
-          .status(BAD_REQUEST)
-          .send({ message: "Invalid data passed for creating an item" });
+        return res.status(BAD_REQUEST).send({ message: "Invalid data" });
       }
       return res
         .status(SERVER_ERROR)
@@ -45,7 +43,7 @@ const deleteItem = (req, res) => {
       console.error(err);
       console.log(err.name);
       if (err.name === "CastError") {
-        return res.status(BAD_REQUEST).send({ message: "Invalid item ID" });
+        return res.status(BAD_REQUEST).send({ message: "Invalid data" });
       }
       if (err.name === "DocumentNotFoundError") {
         return res.status(NOT_FOUND).send({ message: "Item not found" });
@@ -68,7 +66,7 @@ const likeItem = (req, res) => {
       console.error(err);
       console.log(err.name);
       if (err.name === "CastError") {
-        return res.status(BAD_REQUEST).send({ message: "Invalid item ID" });
+        return res.status(BAD_REQUEST).send({ message: "Invalid data" });
       }
       if (err.name === "DocumentNotFoundError") {
         return res.status(NOT_FOUND).send({ message: "Item not found" });
@@ -91,7 +89,7 @@ const dislikeItem = (req, res) => {
       console.error(err);
       console.log(err.name);
       if (err.name === "CastError") {
-        return res.status(BAD_REQUEST).send({ message: "Invalid item ID" });
+        return res.status(BAD_REQUEST).send({ message: "Invalid data" });
       }
       if (err.name === "DocumentNotFoundError") {
         return res.status(NOT_FOUND).send({ message: "Item not found" });
