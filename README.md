@@ -12,9 +12,13 @@ The back-end project is focused on creating a server for the WTWR application. Y
 
 Before committing your code, make sure you edit the file `sprint.txt` in the root folder. The file `sprint.txt` should contain the number of the sprint you're currently working on. For ex. 12
 
-## Deployed Domain
+## Deployed Domains
 
-https://api.tempfit.strangled.net
+Backend: https://api.tempfit.strangled.net
+
+Frontend: https://tempfit.strangled.net
+
+Frontend (www): https://www.tempfit.strangled.net
 
 ## Frontend Repository
 
